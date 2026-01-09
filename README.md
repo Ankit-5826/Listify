@@ -23,7 +23,7 @@ TaskVault is a lightweight and user-friendly to-do list application that helps u
 **▶️ How to Run the Project**
 
     Clone the repository
-    git clone https://github.com/your-username/taskvault.git
+    git clone https://github.com/Ankit-5826/Listify.git
     Open index.html in your browser
     Start managing your tasks 🎉
 
