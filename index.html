@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Listify - A Todo Management Application -->
+<html lang="en">
+  <!-- Head Section: Contains meta tags, title, and external links -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listify - Todo Management</title>
+
+    <!-- Tailwind CSS Framework Link -->
+    <link
+      href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS Stylesheet Link -->
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <!-- Main Body: Contains the entire application layout -->
+  <body>
+    <!-- Main Container: Holds the entire application layout -->
+    <div class="h-screen w-screen mainListBox">
+      <!-- Left Sidebar: Navigation and branding -->
+      <div class="leftMainBox h-screen py-12 px-8">
+        <!-- Project Title Section -->
+        <div class="projectTitle">
+          <h2>Listify</h2>
+        </div>
+        <!-- Navigation Menu Section -->
+        <div class="navs mt-10">
+          <!-- Dashboard Navigation Item -->
+          <div class="navsMenus menusActive mb-3 p-4" id="Deshboard">
+            <img src="Assets/Icons/dashboard.svg" alt="Dashboard icon" />
+            <span> Dashboard</span>
+          </div>
+          <!-- Profile Navigation Item -->
+          <div class="navsMenus" id="Profile">
+            <div class="navsMenus p-4" id="Deshboard">
+              <img src="Assets/Icons/profile.svg" alt="Profile icon" />
+              <span> Profile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Main Content Area -->
+      <div class="rightMainBox h-screen pt-5">
+        <!-- Dashboard Main Container -->
+        <div class="bashboardMainBox">
+          <!-- Breadcrumb/Path Section -->
+          <div class="pathBox pb-5">
+            <img src="Assets/Icons/listCheck.svg" alt="list check icon" />
+            <img
+              src="Assets/Icons/rightArrow.svg"
+              alt="right arrow icon"
+              class="arrowIcon"
+            />
+            <div class="path">
+              <span>Dashboard</span>
+              <img
+                src="Assets/Icons/rightArrow.svg"
+                alt="right arrow icon"
+                class="arrowIcon"
+              />
+              <span>Overview</span>
+            </div>
+          </div>
+          <!-- Dashboard Body Content -->
+          <div class="dashboardBody">
+            <!-- Dashboard Header Section -->
+            <div class="dashboardHeader">
+              <!-- Header Information: Title and Action Buttons -->
+              <div class="headerInfo mt-10 mb-8">
+                <div class="title"><span> My Task </span></div>
+                <div class="actionBtnSection">
+                  <!-- Add New Task Button -->
+                  <div class="addTaskBtn">
+                    <img src="Assets/Icons/addCircle.svg" alt="add task icon" />
+                    <span> New Task</span>
+                  </div>
+                  <!-- User Profile Box -->
+                  <div class="profileBox ml-6">
+                    <img
+                      src="Assets/Imgs/UserProfile.jpeg"
+                      alt="user profile image"
+                      width="40px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Search/Filter Input Section -->
+              <div class="headerFilter">
+                <input type="text" placeholder="Search" />
+              </div>
+            </div>
+            <!-- Task Sections Container -->
+            <div class="dashboardTaskSections pt-16">
+              <!-- To Start Tasks Column -->
+              <div class="todosBox">
+                <div class="todosBoxHeader">
+                  <div class="circle" id="StartBox"></div>
+                  <span> To Start</span>
+                </div>
+                <div class="todoListBox">
+                  <!-- Sample Task Card -->
+                  <div class="taskCard p-5">
+                    <div class="taskCardHeader mb-4">
+                      <div class="taskCardHeaderTitle">
+                        <span>This is header</span>
+                      </div>
+                      <div class="cardMenus">
+                        <img src="Assets/Icons/threeDots.svg" alt="edit menu icon" />
+                      </div>
+                    </div>
+                    <div class="taskCardInfo">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Ullam fugit dolorem, vel error unde inventore minus
+                      deleniti repellendus voluptates molestias.
+                    </div>
+                    <div class="taskCardTime mt-5">
+                      <span>12/7/2025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- In Progress Tasks Column -->
+              <div class="todosBox">
+                <div class="todosBoxHeader">
+                  <div class="circle" id="ProgressBox"></div>
+                  <span> In Progress</span>
+                </div>
+                <div class="todoListBox"></div>
+              </div>
+              <!-- Completed Tasks Column -->
+              <div class="todosBox">
+                <div class="todosBoxHeader">
+                  <div class="circle" id="CompletedBox"></div>
+                  <span> Completed</span>
+                </div>
+                <div class="todoListBox"></div>
+              </div>
+              <!-- Edit Menu (Hidden by default) -->
+              <div class="editMenu p-1 hidden-b">
+                <div class="menuOptions">In Progress</div>
+                <div class="menuOptions">Delete</div>
+              </div>
+
+              <!-- Add Task Modal (Hidden by default) -->
+              <div class="addtaskMainBox p-2 hidden-b">
+                <div class="addtaskInnerBox">
+                  <input type="text" id="title" placeholder="Add your title" />
+                  <textarea
+                    id=""
+                    rows="5"
+                    placeholder="Add your task info here"
+                  ></textarea>
+                  <div class="addtask">
+                    <input type="button" value="Add Task" class="addTaskBtn" />
+                    <input type="button" value="Cancel" class="cancleTaskBtn" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
