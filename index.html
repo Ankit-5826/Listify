@@ -15,11 +15,14 @@
 
     <!-- Custom CSS Stylesheet Link -->
     <link rel="stylesheet" href="CSS/style.css" />
+
+    <!-- JavaScript File Link -->
+    <script src="Script/basicUserAction.js" defer></script>
   </head>
   <!-- Main Body: Contains the entire application layout -->
   <body>
     <!-- Main Container: Holds the entire application layout -->
-    <div class="h-screen w-screen mainListBox">
+    <div class="h-screen w-screen mainListBox" id="MainListBox">
       <!-- Left Sidebar: Navigation and branding -->
       <div class="leftMainBox h-screen py-12 px-8">
         <!-- Project Title Section -->
@@ -73,7 +76,7 @@
                 <div class="title"><span> My Task </span></div>
                 <div class="actionBtnSection">
                   <!-- Add New Task Button -->
-                  <div class="addTaskBtn">
+                  <div class="addTaskBtn" id="addNewTaskBtn">
                     <img src="Assets/Icons/addCircle.svg" alt="add task icon" />
                     <span> New Task</span>
                   </div>
@@ -93,33 +96,15 @@
               </div>
             </div>
             <!-- Task Sections Container -->
-            <div class="dashboardTaskSections pt-16">
+            <div class="dashboardTaskSections pt-16" id="DashboardTaskSections">
               <!-- To Start Tasks Column -->
               <div class="todosBox">
                 <div class="todosBoxHeader">
                   <div class="circle" id="StartBox"></div>
                   <span> To Start</span>
                 </div>
-                <div class="todoListBox">
+                <div class="todoListBox" id="StartTodoListBox">
                   <!-- Sample Task Card -->
-                  <div class="taskCard p-5">
-                    <div class="taskCardHeader mb-4">
-                      <div class="taskCardHeaderTitle">
-                        <span>This is header</span>
-                      </div>
-                      <div class="cardMenus">
-                        <img src="Assets/Icons/threeDots.svg" alt="edit menu icon" />
-                      </div>
-                    </div>
-                    <div class="taskCardInfo">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Ullam fugit dolorem, vel error unde inventore minus
-                      deleniti repellendus voluptates molestias.
-                    </div>
-                    <div class="taskCardTime mt-5">
-                      <span>12/7/2025</span>
-                    </div>
-                  </div>
                 </div>
               </div>
               <!-- In Progress Tasks Column -->
@@ -128,34 +113,39 @@
                   <div class="circle" id="ProgressBox"></div>
                   <span> In Progress</span>
                 </div>
-                <div class="todoListBox"></div>
+                <div class="todoListBox" id="ProgressTodoListBox"></div>
               </div>
               <!-- Completed Tasks Column -->
               <div class="todosBox">
                 <div class="todosBoxHeader">
                   <div class="circle" id="CompletedBox"></div>
-                  <span> Completed</span>
+                  <span>Completed</span>
                 </div>
-                <div class="todoListBox"></div>
-              </div>
-              <!-- Edit Menu (Hidden by default) -->
-              <div class="editMenu p-1 hidden-b">
-                <div class="menuOptions">In Progress</div>
-                <div class="menuOptions">Delete</div>
+                <div class="todoListBox" id="CompletedTodoListBox"></div>
               </div>
 
               <!-- Add Task Modal (Hidden by default) -->
-              <div class="addtaskMainBox p-2 hidden-b">
+              <div class="addtaskMainBox p-2 hidden-b" id="addTaskBox">
                 <div class="addtaskInnerBox">
-                  <input type="text" id="title" placeholder="Add your title" />
+                  <input type="text" id="Title" placeholder="Add your title" />
                   <textarea
-                    id=""
+                    id="TaskInfo"
                     rows="5"
                     placeholder="Add your task info here"
                   ></textarea>
                   <div class="addtask">
-                    <input type="button" value="Add Task" class="addTaskBtn" />
-                    <input type="button" value="Cancel" class="cancleTaskBtn" />
+                    <input
+                      type="button"
+                      value="Add Task"
+                      class="addTaskBtn"
+                      id="addTaskBtn"
+                    />
+                    <input
+                      type="button"
+                      value="Cancel"
+                      class="cancleTaskBtn"
+                      id="cancelTaskBtn"
+                    />
                   </div>
                 </div>
               </div>
@@ -164,5 +154,36 @@
         </div>
       </div>
     </div>
+
+    <!-- Edit Menu (Hidden by default) -->
+    <div class="editMenu p-1 hidden-b" id="EditMenu">
+      <div class="dyOptions" id="DyOptions">
+      </div>
+      <div class="menuOptions delete">Delete</div>
+    </div>
   </body>
 </html>
+
+<!-- <div class="taskCard p-5">
+  <div class="taskCardHeader mb-4">
+    <div class="taskCardHeaderTitle">
+      <span>This is header</span>
+    </div>
+    <div class="cardMenus">
+      <img
+        src="Assets/Icons/threeDots.svg"
+        alt="edit menu icon"
+        data-action="edit"
+        data-task-status="completed"
+      />
+    </div>
+  </div>
+  <div class="taskCardInfo">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam fugit
+    dolorem, vel error unde inventore minus deleniti repellendus voluptates
+    molestias.
+  </div>
+  <div class="taskCardTime mt-5">
+    <span>12/7/2025</span>
+  </div>
+</div> -->
